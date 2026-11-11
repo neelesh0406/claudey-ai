@@ -1,26 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { Button } from "./ui/button";
 import { Show, UserButton } from "@clerk/nextjs";
+import logoNavbarLight from "@/public/brand/logo-navbar-light.png";
 
 function SiteHeader() {
   const isLandingPage = true;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-20 flex h-18 items-center justify-between border-b border-white/5 bg-background/70 px-6 backdrop-blur-md md:px-10">
+    <header className="fixed inset-x-0 top-0 z-20 flex h-18 items-center justify-between border-b border-black/5 bg-background/80 px-6 backdrop-blur-md dark:border-white/5 md:px-10">
       <Link
         href="/"
-        className="flex items-center"
+        className="group flex items-center gap-3 transition-transform hover:scale-[1.02]"
+        aria-label="Claudey AI"
       >
         <Image
-          src="/brand/logo-navbar-light.png"
-          alt="Orkestr"
-          width={314}
-          height={160}
-          className="h-12 w-auto"
+          src={logoNavbarLight}
+          alt="Claudey AI"
+          className="h-11 sm:h-12 w-auto object-contain transition-all dark:invert"
           priority
         />
+        <span className="sr-only">Claudey AI</span>
       </Link>
 
       {isLandingPage && (

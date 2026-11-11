@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import mascotImg from "@/public/brand/mascot.png";
+import logoNavbarLight from "@/public/brand/logo-navbar-light.png";
 import { Button } from "@/components/ui/button";
 import { HOW_IT_WORKS_STEPS } from "@/lib/data/how-it-works";
 import {
@@ -10,7 +12,6 @@ import {
   Columns3,
   Sparkles,
   Check,
-  Bot,
   Plus,
   MapPin,
   Zap,
@@ -49,17 +50,23 @@ export default function Home() {
           <span>Early access</span>
         </div>
 
-        {/* Hero Title */}
-        <h1 className="mt-5 max-w-3xl font-display text-3xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:leading-[1.1]">
-          An <span className="text-[#d93900] dark:text-[#f04e17]">orkestr</span>
-          ator for whatever you&apos;re building
+        {/* Hero Title with Primary Tagline */}
+        <h1 className="mt-5 max-w-4xl font-display text-3xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:leading-[1.15]">
+          <span className="opacity-20">C</span>laudey lag gaye ?{" "}
+          <span className="inline-block transition-transform hover:scale-110">
+            😂
+          </span>{" "}
+          <span className="block mt-1 text-[#d93900] dark:text-[#f04e17] text-2xl sm:text-4xl md:text-5xl">
+            Lagne hi the, let{" "}
+            <span className="text-foreground">Claudey Ai</span> handle it !
+          </span>
         </h1>
 
         {/* Hero Subtitle */}
-        <p className="mt-3.5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl">
-          Pair real-time collaborative docs with an infinite visual canvas in
-          every workspace. Ideate freely, structure specs, and let your AI
-          co-pilot orchestrate execution.
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl">
+          The playful, friendly modern AI workspace with conversational
+          co-piloting, an infinite visual canvas, and collaborative docs. Chat,
+          brainstorm, and get work done seamlessly.
         </p>
 
         {/* Action Buttons */}
@@ -95,8 +102,12 @@ export default function Home() {
             <span>tldraw canvas & BlockNote docs</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <CheckCircle2 className="size-3.5 text-[#d93900] dark:text-[#f04e17]" />
-            <span>Integrated AI agent co-pilot</span>
+            <Image
+              src={mascotImg}
+              alt="Claudey Mascot"
+              className="size-4 object-contain"
+            />
+            <span>Integrated Claudey AI co-pilot</span>
           </div>
         </div>
 
@@ -179,7 +190,7 @@ export default function Home() {
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">
             Stop switching between disjointed diagramming boards, doc tools, and
-            ticket trackers. Every Orkestr workspace seamlessly connects visual
+            ticket trackers. Every Claudey workspace seamlessly connects visual
             architecture, living specifications, and team delivery.
           </p>
         </div>
@@ -281,14 +292,14 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Flowchart Node 2: Agent Orchestrator */}
+                  {/* Flowchart Node 2: Claudey AI Engine */}
                   <div className="absolute top-12 right-6 z-10 w-44 rounded-lg border border-[#d93900]/30 bg-[#d93900]/[0.06] p-2.5 shadow-md backdrop-blur-sm dark:border-[#d93900]/40">
                     <div className="flex items-center gap-1 text-[10px] font-semibold text-[#d93900] dark:text-[#f04e17]">
                       <Sparkles className="size-2.5" />
-                      <span>AI ORCHESTRATOR</span>
+                      <span>CLAUDEY AI ORCHESTRATOR</span>
                     </div>
                     <div className="text-xs font-semibold text-foreground">
-                      Agent Core Engine
+                      Claudey Co-pilot Core
                     </div>
                     <div className="mt-1 text-[9px] text-muted-foreground">
                       Tool Calling & Shape Synthesizer
@@ -332,8 +343,12 @@ export default function Home() {
 
                   {/* In-place Agent Edit Pill */}
                   <div className="absolute bottom-4 right-4 z-20 flex items-center gap-1.5 rounded-full border border-[#d93900]/30 bg-card/90 px-2.5 py-1 text-[10px] text-foreground shadow-md backdrop-blur-md">
-                    <Bot className="size-3 text-[#d93900]" />
-                    <span>Editing: adding caching proxy...</span>
+                    <Image
+                      src={mascotImg}
+                      alt="Claudey AI"
+                      className="size-3.5 object-contain"
+                    />
+                    <span>Claudey: adding caching proxy...</span>
                   </div>
                 </div>
               </div>
@@ -620,9 +635,14 @@ export default function Home() {
                 {/* Bottom Agent Notification */}
                 <div className="mt-2.5 flex items-center justify-between rounded-md border border-amber-500/20 bg-amber-500/[0.05] px-2.5 py-1 text-[10px] text-amber-700 dark:text-amber-300">
                   <div className="flex items-center gap-1.5">
-                    <Sparkles className="size-2.5 text-amber-500" />
+                    <Image
+                      src={mascotImg}
+                      alt="Claudey AI"
+                      className="size-3.5 object-contain"
+                    />
                     <span>
-                      AI extracted 5 delivery tasks from whiteboard & spec
+                      Claudey AI extracted 5 delivery tasks from whiteboard &
+                      spec
                     </span>
                   </div>
                   <span className="font-mono text-[9px] opacity-75">
@@ -710,6 +730,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section (Placeholder Tiers) */}
+      {/* TODO: Implement pricing tiers later */}
       <section
         id="pricing"
         className="relative z-10 mx-auto w-full max-w-6xl px-6 py-20 lg:px-8 scroll-mt-20"
@@ -724,7 +745,7 @@ export default function Home() {
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">
             Start free for personal workflows. Scale effortlessly when your team
-            is ready to orchestrate together.
+            is ready to scale together with Claudey.
           </p>
         </div>
 
@@ -910,19 +931,14 @@ export default function Home() {
           />
 
           <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center">
-            {/* Mascot Spotlight Badge with Generated 3D Mascot */}
-            <div className="relative mb-6 flex size-28 items-center justify-center rounded-3xl border border-black/10 bg-background/95 p-2 shadow-2xl ring-8 ring-black/[0.02] dark:border-white/15 dark:bg-card dark:ring-white/[0.03]">
+            {/* Mascot (transparent PNG, no container background) */}
+            <div className="relative mb-6 flex items-center justify-center">
               <Image
-                src="/brand/mascot.png"
-                alt="Orkestr Mascot"
-                width={112}
-                height={112}
-                className="size-full object-contain"
+                src={mascotImg}
+                alt="Claudey Mascot"
+                className="h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
                 priority
               />
-              <span className="absolute -top-1.5 -right-1.5 flex size-6 items-center justify-center rounded-full bg-[#d93900] text-white shadow-md ring-2 ring-background">
-                <Sparkles className="size-3.5" />
-              </span>
             </div>
 
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-[#d93900] dark:text-[#f04e17]">
@@ -930,12 +946,12 @@ export default function Home() {
             </span>
 
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:leading-[1.15]">
-              Ready to orchestrate your workspace?
+              Ready to let Claudey AI handle it ? 😂
             </h2>
 
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
               Join product teams, founders, and solo builders turning ideas into
-              specs, architecture, and code in one unified space.
+              specs, architecture, and code in one playful, unified space.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
@@ -972,18 +988,21 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
           {/* Brand & Tagline */}
           <div className="flex flex-col items-center md:items-start gap-2">
-            <Link href="/" className="flex items-center gap-2">
+            <Link
+              href="/"
+              className="group flex items-center gap-2.5 transition-transform hover:scale-[1.02]"
+              aria-label="Claudey AI"
+            >
               <Image
-                src="/brand/logo-navbar-light.png"
-                alt="Orkestr"
-                width={120}
-                height={60}
-                className="h-8 w-auto"
+                src={logoNavbarLight}
+                alt="Claudey AI"
+                className="h-8 sm:h-9 w-auto object-contain transition-all dark:invert"
               />
+              <span className="sr-only">Claudey AI</span>
             </Link>
             <p className="text-xs text-muted-foreground text-center md:text-left">
-              The AI-native dual-surface workspace for docs, canvas, and team
-              delivery.
+              The playful, friendly modern AI workspace for conversational
+              co-piloting, docs, and visual canvas.
             </p>
           </div>
 
@@ -1032,7 +1051,7 @@ export default function Home() {
               </span>
             </div>
             <span className="text-[10px] font-mono text-muted-foreground/60">
-              © {2026} Orkestr AI. All rights reserved.
+              © {2026} Claudey AI. All rights reserved.
             </span>
           </div>
         </div>

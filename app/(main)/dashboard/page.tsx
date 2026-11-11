@@ -4,8 +4,8 @@ import { redirect } from "next/navigation";
 export const instant = false;
 
 export const metadata = {
-  title: "Dashboard | Orkestr",
-  description: "Manage your workspaces and projects",
+  title: "Dashboard | Claudey AI",
+  description: "Manage your workspaces and projects with Claudey",
 };
 
 export default async function DashboardPage() {
