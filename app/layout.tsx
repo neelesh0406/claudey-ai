@@ -1,3 +1,6 @@
+import { ClerkProvider } from "@clerk/nextjs";
+import { shadcn } from "@clerk/ui/themes";
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import {
   Geist,
@@ -41,7 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       suppressHydrationWarning
       className={cn(
-        // "dark",
+        "dark",
         "h-full",
         "antialiased",
         geistSans.variable,
@@ -51,10 +54,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
     >
       <body className="min-h-full flex flex-col">
-        <TooltipProvider>
-          <AppShell>{children}</AppShell>
-          <Toaster richColors />
-        </TooltipProvider>
+        <ClerkProvider appearance={{ theme: shadcn }}>
+          <TooltipProvider>
+            <Suspense>
+              <AppShell>{children}</AppShell>
+            </Suspense>
+            <Toaster richColors />
+          </TooltipProvider>
+        </ClerkProvider>
       </body>
     </html>
   );

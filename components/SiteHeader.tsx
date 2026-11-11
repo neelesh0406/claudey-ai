@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import { Button } from "./ui/button";
+import { Show, UserButton } from "@clerk/nextjs";
 
 function SiteHeader() {
-  const isSignedIn = false;
   const isLandingPage = true;
 
   return (
     <header className="fixed inset-x-0 top-0 z-20 flex h-18 items-center justify-between border-b border-white/5 bg-background/70 px-6 backdrop-blur-md md:px-10">
       <Link
-        href={isSignedIn && !isLandingPage ? "/dashboard" : "/"}
+        href="/"
         className="flex items-center"
       >
         <Image
@@ -47,9 +47,22 @@ function SiteHeader() {
       )}
 
       <div className="flex items-center gap-3">
-        <Button variant="ghost" size="sm" asChild>
-          <Link href="/sign-in">Sign in</Link>
-        </Button>
+        <Suspense>
+          <Show when="signed-out">
+            <Button variant="ghost" size="sm" asChild>
+              <Link href="/sign-in">Sign in</Link>
+            </Button>
+            <Button size="sm" asChild>
+              <Link href="/sign-up">Sign up</Link>
+            </Button>
+          </Show>
+          <Show when="signed-in">
+            <Button variant="outline" size="sm" asChild>
+              <Link href="/dashboard">Dashboard</Link>
+            </Button>
+            <UserButton />
+          </Show>
+        </Suspense>
       </div>
     </header>
   );
